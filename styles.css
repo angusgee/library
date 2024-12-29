@@ -47,34 +47,34 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.sidebar-form {
+form {
     min-height: 100vh;
     background: linear-gradient(145deg, #2a2a2a, #333333);
     font-weight: 600;
 }
 
-.sidebar-form > p > label,
-.sidebar-form > p > input {
+form > p > label,
+form > p > input {
     display: block;
     min-width: 300px;
 }
-.sidebar-form > p > label {
+form > p > label {
     /* padding: 0.25rem; */
     margin: 1.5rem 1rem 0.25rem 1rem;
 }
-.sidebar-form > p > input {
+form > p > input {
     padding: 0.25rem;
     margin: 0.5rem 1rem;
     border-radius: 0.25rem;
 }
 
-.sidebar-form h1 {
+form h1 {
     margin-top: 3rem;
     margin-bottom: 2rem;
     margin-left: 1.5rem;
 }
 
-.sidebar-form button {
+form button {
     margin: 2.5rem 1rem;
     min-width: 312px;
     padding: 0.5rem;
