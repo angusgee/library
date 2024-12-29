@@ -49,6 +49,39 @@ body {
 
 .sidebar-form {
     min-height: 100vh;
-    min-width: 400px;
     background: linear-gradient(145deg, #2a2a2a, #333333);
+    font-weight: 600;
+}
+
+.sidebar-form > p > label,
+.sidebar-form > p > input {
+    display: block;
+    min-width: 300px;
+}
+.sidebar-form > p > label {
+    /* padding: 0.25rem; */
+    margin: 1.5rem 1rem 0.25rem 1rem;
+}
+.sidebar-form > p > input {
+    padding: 0.25rem;
+    margin: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+.sidebar-form h1 {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin-left: 1.5rem;
+}
+
+.sidebar-form button {
+    margin: 2.5rem 1rem;
+    min-width: 312px;
+    padding: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-radius: 0.5rem;
+    display: block;
 }
