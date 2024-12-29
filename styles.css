@@ -1,0 +1,19 @@
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    background-color: #f4f4f4;
+    width: 100vw;
+    height: 100vh;
+}
