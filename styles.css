@@ -13,29 +13,35 @@ svg {
 }
 
 body {
-    background-color: #f4f4f4;
+    background-color: #1a1a1a;
     width: 100vw;
     height: 100vh;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 2rem;
 }
 
 .card {
-    min-width: 200px;
+    min-width: 250px;
     min-height: 200px;
-    background-color: blue;
-    color: white;
-    font-weight: 700;
+    background: linear-gradient(145deg, #2a2a2a, #333333);
+    color: #e0e0e0;
+    font-weight: 600;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-top: 1rem;
-    padding-left: 0.5rem;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
