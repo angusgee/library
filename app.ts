@@ -1,3 +1,6 @@
+const bookLibrary: Book[] = [];
+const container = document.querySelector(".container");
+
 interface Book {
     title: string;
     author: string;
@@ -25,10 +28,6 @@ function Book(
     };
 }
 
-const book = Book("River God", "Wilbur Smith", 500, true);
-
-const bookLibrary: Book[] = [];
-
 function addBookToLibrary(
     title: string,
     author: string,
@@ -46,3 +45,18 @@ addBookToLibrary("The Da Vinci Code", "Dan Brown", 600, false);
 addBookToLibrary("The Lord of the Rings", "J.R.R Tolkien", 1500, true);
 
 console.log(bookLibrary);
+
+bookLibrary.forEach((book) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    const title = document.createElement("p");
+    title.innerHTML = book.title;
+    card.appendChild(title);
+    const author = document.createElement("p");
+    author.innerHTML = book.author;
+    card.appendChild(author);
+    const pages = document.createElement("p");
+    pages.innerHTML = book.pages.toString();
+    card.appendChild(pages);
+    container?.appendChild(card);
+});
