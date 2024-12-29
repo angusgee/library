@@ -2,6 +2,7 @@
 const bookLibrary = [];
 const container = document.querySelector(".container");
 const submitBtn = document.getElementById("submit");
+const form = document.getElementById("form");
 function Book(title, author, pages, haveRead) {
     return {
         title,
@@ -26,7 +27,7 @@ bookLibrary.forEach((book) => {
     const card = document.createElement("div");
     card.classList.add("card");
     const title = document.createElement("p");
-    title.innerHTML = `Title: ${book.title}`;
+    title.innerHTML = book.title;
     card.appendChild(title);
     const author = document.createElement("p");
     author.innerHTML = book.author;
@@ -35,9 +36,13 @@ bookLibrary.forEach((book) => {
     const pages = document.createElement("p");
     pages.innerHTML = `Pages: ${book.pages.toString()}`;
     card.appendChild(pages);
+    const removeBtn = document.createElement("button");
+    removeBtn.innerHTML = "Remove";
+    removeBtn.classList.add("remove-btn");
+    card.appendChild(removeBtn);
     container === null || container === void 0 ? void 0 : container.appendChild(card);
 });
-submitBtn === null || submitBtn === void 0 ? void 0 : submitBtn.addEventListener("submit", (e) => {
+form === null || form === void 0 ? void 0 : form.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log("form submitted!");
 });

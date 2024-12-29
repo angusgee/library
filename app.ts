@@ -1,6 +1,7 @@
 const bookLibrary: Book[] = [];
 const container = document.querySelector(".container");
 const submitBtn = document.getElementById("submit");
+const form = document.getElementById("form");
 
 interface Book {
     title: string;
@@ -49,7 +50,7 @@ bookLibrary.forEach((book) => {
     const card = document.createElement("div");
     card.classList.add("card");
     const title = document.createElement("p");
-    title.innerHTML = `Title: ${book.title}`;
+    title.innerHTML = book.title;
     card.appendChild(title);
     const author = document.createElement("p");
     author.innerHTML = book.author;
@@ -58,10 +59,14 @@ bookLibrary.forEach((book) => {
     const pages = document.createElement("p");
     pages.innerHTML = `Pages: ${book.pages.toString()}`;
     card.appendChild(pages);
+    const removeBtn = document.createElement("button");
+    removeBtn.innerHTML = "Remove";
+    removeBtn.classList.add("remove-btn");
+    card.appendChild(removeBtn);
     container?.appendChild(card);
 });
 
-submitBtn?.addEventListener("submit", (e) => {
+form?.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log("form submitted!");
 });

@@ -9,7 +9,17 @@
     </head>
     <body>
         <div class="container"></div>
-        <form action="/" method="post">
+        <div class="sidebar">
+            <img
+                src="/assets/chevron-double-left.svg"
+                alt="icon to open sidebar"
+            />
+            <img
+                src="/assets/chevron-double-right.svg"
+                alt="icon to close sidebar"
+            />
+        </div>
+        <form action="/" method="post" id="form">
             <h1>Add a Book</h1>
             <p>
                 <label for="title">Title</label>
@@ -23,7 +33,7 @@
                 <label for="num-pages">Number of Pages</label>
                 <input type="number" name="num-pages" id="num-pages" />
             </p>
-            <div><button type="submit" id="submit">Add</button></div>
+            <div><button type="submit" id="submit">Add Book</button></div>
         </form>
     </body>
 </html>
