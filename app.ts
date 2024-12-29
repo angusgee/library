@@ -50,13 +50,14 @@ bookLibrary.forEach((book) => {
     const card = document.createElement("div");
     card.classList.add("card");
     const title = document.createElement("p");
-    title.innerHTML = book.title;
+    title.innerHTML = `Title: ${book.title}`;
     card.appendChild(title);
     const author = document.createElement("p");
     author.innerHTML = book.author;
+    author.innerHTML = `By: ${book.author}`;
     card.appendChild(author);
     const pages = document.createElement("p");
-    pages.innerHTML = book.pages.toString();
+    pages.innerHTML = `Pages: ${book.pages.toString()}`;
     card.appendChild(pages);
     container?.appendChild(card);
 });

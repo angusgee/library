@@ -18,6 +18,7 @@ body {
     height: 100vh;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #e0e0e0;
+    display: flex;
 }
 
 .container {
@@ -44,4 +45,10 @@ body {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-form {
+    min-height: 100vh;
+    min-width: 400px;
+    background: linear-gradient(145deg, #2a2a2a, #333333);
 }
