@@ -1,10 +1,12 @@
 const bookLibrary: Book[] = [];
 const container = document.querySelector(".container");
 const submitBtn = document.getElementById("submit");
-const form: HTMLFormElement = document.getElementById("form");
-const sidebarHeading = document.querySelector(".sidebar-heading");
-const openArrow = document.querySelector(".open-arrow");
-const closeArrow = document.querySelector(".close-arrow");
+const form = document.getElementById("form") as HTMLFormElement;
+const sidebarHeading = document.querySelector(
+    ".sidebar-heading"
+) as HTMLHeadingElement;
+const openArrow = document.querySelector(".open-arrow") as HTMLImageElement;
+const closeArrow = document.querySelector(".close-arrow") as HTMLImageElement;
 
 interface Book {
     title: string;
@@ -77,13 +79,16 @@ form?.addEventListener("submit", (e) => {
 
 form.style.display = "none";
 
-openArrow.addEventListener("click", () => {
+function showForm(): void {
     form.style.display = "block";
     // console.log(">> clicked!");
     openArrow.style.display = "none";
     sidebarHeading.style.display = "none";
     closeArrow.style.display = "block";
-});
+}
+
+openArrow?.addEventListener("click", showForm);
+sidebarHeading?.addEventListener("click", showForm);
 
 closeArrow?.addEventListener("click", () => {
     form.style.display = "none";

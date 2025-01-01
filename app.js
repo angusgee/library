@@ -51,13 +51,15 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (e) 
     console.log("form submitted!");
 });
 form.style.display = "none";
-openArrow.addEventListener("click", () => {
+function showForm() {
     form.style.display = "block";
     // console.log(">> clicked!");
     openArrow.style.display = "none";
     sidebarHeading.style.display = "none";
     closeArrow.style.display = "block";
-});
+}
+openArrow === null || openArrow === void 0 ? void 0 : openArrow.addEventListener("click", showForm);
+sidebarHeading === null || sidebarHeading === void 0 ? void 0 : sidebarHeading.addEventListener("click", showForm);
 closeArrow === null || closeArrow === void 0 ? void 0 : closeArrow.addEventListener("click", () => {
     form.style.display = "none";
     openArrow.style.display = "block";

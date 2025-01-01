@@ -69,10 +69,12 @@ body {
 .sidebar h2 {
     margin: 1rem;
     text-align: center;
+    cursor: pointer;
 }
 
 .sidebar img {
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .sidebar img:last-child {
@@ -91,7 +93,6 @@ form > p > input {
     min-width: 300px;
 }
 form > p > label {
-    /* padding: 0.25rem; */
     margin: 1.5rem 1rem 0.25rem 1rem;
 }
 form > p > input {
