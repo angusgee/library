@@ -51,7 +51,7 @@ addBookToLibrary("The Count of Monte Cristo", "Alexandre Dumas", 1000, false);
 addBookToLibrary("The Da Vinci Code", "Dan Brown", 600, false);
 addBookToLibrary("The Lord of the Rings", "J.R.R Tolkien", 1500, true);
 
-bookLibrary.forEach((book) => {
+function createBookObject(book: Book): void {
     const card = document.createElement("div");
     card.classList.add("card");
     const title = document.createElement("p");
@@ -69,30 +69,54 @@ bookLibrary.forEach((book) => {
     removeBtn.classList.add("remove-btn");
     card.appendChild(removeBtn);
     container?.appendChild(card);
+}
+
+bookLibrary.forEach((book) => {
+    createBookObject(book);
 });
 
+/////////////////////////////////
 // FORM
-form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log("form submitted!");
-});
 
+// initial state
 form.style.display = "none";
+openArrow.addEventListener("click", showForm);
+sidebarHeading.addEventListener("click", showForm);
 
+// show form
 function showForm(): void {
     form.style.display = "block";
-    // console.log(">> clicked!");
     openArrow.style.display = "none";
     sidebarHeading.style.display = "none";
     closeArrow.style.display = "block";
 }
 
-openArrow?.addEventListener("click", showForm);
-sidebarHeading?.addEventListener("click", showForm);
-
-closeArrow?.addEventListener("click", () => {
+// hide form
+closeArrow.addEventListener("click", () => {
     form.style.display = "none";
     openArrow.style.display = "block";
     closeArrow.style.display = "none";
     sidebarHeading.style.display = "block";
 });
+
+// add new book on form submission
+form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("form submitted!");
+    const newTitle = (document.getElementById("title") as HTMLInputElement)
+        .value;
+    const newAuthor = (document.getElementById("author") as HTMLInputElement)
+        .value;
+    const newPages = parseInt(
+        (document.getElementById("num-pages") as HTMLInputElement).value
+    );
+    // const newHaveRead = (
+    //     document.getElementById("have-read") as HTMLInputElement
+    // ).value;
+
+    addBookToLibrary(newTitle, newAuthor, newPages, false);
+    console.log(bookLibrary);
+    createBookObject(bookLibrary[bookLibrary.length - 1]);
+});
+
+/////////////////////////////////
