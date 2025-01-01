@@ -3,6 +3,9 @@ const bookLibrary = [];
 const container = document.querySelector(".container");
 const submitBtn = document.getElementById("submit");
 const form = document.getElementById("form");
+const sidebarHeading = document.querySelector(".sidebar-heading");
+const openArrow = document.querySelector(".open-arrow");
+const closeArrow = document.querySelector(".close-arrow");
 function Book(title, author, pages, haveRead) {
     return {
         title,
@@ -42,7 +45,22 @@ bookLibrary.forEach((book) => {
     card.appendChild(removeBtn);
     container === null || container === void 0 ? void 0 : container.appendChild(card);
 });
+// FORM
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log("form submitted!");
+});
+form.style.display = "none";
+openArrow.addEventListener("click", () => {
+    form.style.display = "block";
+    // console.log(">> clicked!");
+    openArrow.style.display = "none";
+    sidebarHeading.style.display = "none";
+    closeArrow.style.display = "block";
+});
+closeArrow === null || closeArrow === void 0 ? void 0 : closeArrow.addEventListener("click", () => {
+    form.style.display = "none";
+    openArrow.style.display = "block";
+    closeArrow.style.display = "none";
+    sidebarHeading.style.display = "block";
 });

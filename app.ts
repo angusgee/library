@@ -1,7 +1,10 @@
 const bookLibrary: Book[] = [];
 const container = document.querySelector(".container");
 const submitBtn = document.getElementById("submit");
-const form = document.getElementById("form");
+const form: HTMLFormElement = document.getElementById("form");
+const sidebarHeading = document.querySelector(".sidebar-heading");
+const openArrow = document.querySelector(".open-arrow");
+const closeArrow = document.querySelector(".close-arrow");
 
 interface Book {
     title: string;
@@ -66,7 +69,25 @@ bookLibrary.forEach((book) => {
     container?.appendChild(card);
 });
 
+// FORM
 form?.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log("form submitted!");
+});
+
+form.style.display = "none";
+
+openArrow.addEventListener("click", () => {
+    form.style.display = "block";
+    // console.log(">> clicked!");
+    openArrow.style.display = "none";
+    sidebarHeading.style.display = "none";
+    closeArrow.style.display = "block";
+});
+
+closeArrow?.addEventListener("click", () => {
+    form.style.display = "none";
+    openArrow.style.display = "block";
+    closeArrow.style.display = "none";
+    sidebarHeading.style.display = "block";
 });
