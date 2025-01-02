@@ -26,9 +26,10 @@ addBookToLibrary("River God", "Wilbur Smith", 500, true);
 addBookToLibrary("The Count of Monte Cristo", "Alexandre Dumas", 1000, false);
 addBookToLibrary("The Da Vinci Code", "Dan Brown", 600, false);
 addBookToLibrary("The Lord of the Rings", "J.R.R Tolkien", 1500, true);
-function createBookObject(book) {
+function createBookObject(book, i) {
     const card = document.createElement("div");
     card.classList.add("card");
+    card.dataset.indexNumber = i.toString();
     const title = document.createElement("p");
     title.innerHTML = book.title;
     card.appendChild(title);
@@ -45,8 +46,8 @@ function createBookObject(book) {
     card.appendChild(removeBtn);
     container === null || container === void 0 ? void 0 : container.appendChild(card);
 }
-bookLibrary.forEach((book) => {
-    createBookObject(book);
+bookLibrary.forEach((book, i) => {
+    createBookObject(book, i);
 });
 /////////////////////////////////
 // FORM
@@ -82,6 +83,6 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", (e) 
     // ).value;
     addBookToLibrary(newTitle, newAuthor, newPages, false);
     console.log(bookLibrary);
-    createBookObject(bookLibrary[bookLibrary.length - 1]);
+    createBookObject(bookLibrary[bookLibrary.length - 1], bookLibrary.length);
 });
 /////////////////////////////////

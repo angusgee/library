@@ -51,9 +51,10 @@ addBookToLibrary("The Count of Monte Cristo", "Alexandre Dumas", 1000, false);
 addBookToLibrary("The Da Vinci Code", "Dan Brown", 600, false);
 addBookToLibrary("The Lord of the Rings", "J.R.R Tolkien", 1500, true);
 
-function createBookObject(book: Book): void {
+function createBookObject(book: Book, i: number): void {
     const card = document.createElement("div");
     card.classList.add("card");
+    card.dataset.indexNumber = i.toString();
     const title = document.createElement("p");
     title.innerHTML = book.title;
     card.appendChild(title);
@@ -71,8 +72,8 @@ function createBookObject(book: Book): void {
     container?.appendChild(card);
 }
 
-bookLibrary.forEach((book) => {
-    createBookObject(book);
+bookLibrary.forEach((book, i) => {
+    createBookObject(book, i);
 });
 
 /////////////////////////////////
@@ -116,7 +117,7 @@ form?.addEventListener("submit", (e) => {
 
     addBookToLibrary(newTitle, newAuthor, newPages, false);
     console.log(bookLibrary);
-    createBookObject(bookLibrary[bookLibrary.length - 1]);
+    createBookObject(bookLibrary[bookLibrary.length - 1], bookLibrary.length);
 });
 
 /////////////////////////////////
