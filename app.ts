@@ -69,6 +69,15 @@ function createBookObject(book: Book, i: number): void {
     removeBtn.innerHTML = "Remove";
     removeBtn.classList.add("remove-btn");
     card.appendChild(removeBtn);
+    // new event listener
+    removeBtn.addEventListener("click", (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        const parentDiv = target.closest(".card") as HTMLDivElement;
+        const index: number = parseInt(parentDiv.dataset.indexNumber!);
+        bookLibrary.splice(index, 1);
+        parentDiv.style.display = "none";
+        console.log(bookLibrary);
+    });
     container?.appendChild(card);
 }
 

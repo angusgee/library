@@ -44,11 +44,27 @@ function createBookObject(book, i) {
     removeBtn.innerHTML = "Remove";
     removeBtn.classList.add("remove-btn");
     card.appendChild(removeBtn);
+    // new event listener
+    removeBtn.addEventListener("click", (e) => {
+        const target = e.target;
+        const parentDiv = target.closest(".card");
+        const index = parseInt(parentDiv.dataset.indexNumber);
+        bookLibrary.splice(index, 1);
+        parentDiv.style.display = "none";
+        console.log(bookLibrary);
+    });
     container === null || container === void 0 ? void 0 : container.appendChild(card);
 }
 bookLibrary.forEach((book, i) => {
     createBookObject(book, i);
 });
+// remove book from array using data attribute then re-render cards
+function removeBook(book) {
+    bookLibrary[book];
+    bookLibrary.forEach((book, i) => {
+        createBookObject(book, i);
+    });
+}
 /////////////////////////////////
 // FORM
 // initial state

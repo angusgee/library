@@ -20,10 +20,8 @@
 
 ## Section 5 - add "remove book" button
 
-s
-
 -   ~~add data attribute with index of book in array~~
 -   ~~add button to each card "delete book"~~
--   add event listener to btn
-    -   remove book from array based on index
-    -   re-render
+-   ~~add event listener to btn~~
+    -   ~~remove book from array based on index~~
+    -   ~~set display to none~~
